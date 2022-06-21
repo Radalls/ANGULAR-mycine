@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { find } from 'rxjs';
 import { Film } from '../models/Film';
 import { FILMS } from './mock-films';
 
