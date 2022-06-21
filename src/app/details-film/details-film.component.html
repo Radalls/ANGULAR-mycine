@@ -1,0 +1,14 @@
+<button routerLink="">Retour</button>
+<div class="actions">
+  <button [routerLink]="['/films/edit', film?.id]">Modifier</button>
+  <button (click)="delete()">Supprimer</button>
+</div>
+
+<div class="details">
+  <div class="content" *ngIf="film">
+    <div>ID: {{ film.id }}</div>
+    <div>TITRE: {{ film.title }}</div>
+    <div>SYNOPSIS: {{ film.synopsis }}</div>
+    <div>NOTE: {{ film.rating }}</div>
+  </div>
+</div>

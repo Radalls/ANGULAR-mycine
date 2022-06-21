@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    align-items: center;
+
+    padding: 10px;
+    margin-top: 50px;
+    gap: 20px;
+
+    background-color: whitesmoke;
+    box-shadow: 0px 10px 10px lightgrey;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+
+      .input {
+        border-radius: 5px;
+      }
+
+      .alert {
+        color: red;
+      }
+    }
+
+    .submit {
+
+    }
+  }
+}

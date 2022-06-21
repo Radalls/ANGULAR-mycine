@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="fields">
+    <div class="title">{{ this.film?.title }}</div>
+    <div>Note : {{ this.film?.rating }}</div>
+  </div>
+  <button class="details" [routerLink]="['/films', this.film?.id]">Détails</button>
+</div>

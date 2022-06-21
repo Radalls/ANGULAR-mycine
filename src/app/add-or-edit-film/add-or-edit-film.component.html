@@ -1,0 +1,21 @@
+<button routerLink="">Retour</button>
+
+<div class="form">
+  <form class="content" [formGroup]="filmForm" (ngSubmit)="save()">
+    <input type="number" formControlName="id" hidden>
+    <div class="field">
+      <label>Titre</label>
+      <input class="input" type="text" formControlName="title">
+      <label class="alert" *ngIf="filmForm.controls.title.status == 'INVALID'">Valeur obligatoire.</label>
+    </div>
+    <div class="field">
+      <label>Synopsis</label>
+      <textarea class="input" formControlName="synopsis"></textarea>
+    </div>
+    <div class="field">
+      <label>Note</label>
+      <input class="input" type="number" formControlName="rating" min="0" max="5">
+    </div>
+    <button [disabled]="filmForm.status === 'INVALID'" class="submit" type="submit">Sauvegarder</button>
+  </form>
+</div>
