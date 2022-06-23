@@ -1,21 +1,25 @@
-<button routerLink="">Retour</button>
+<div class="actions">
+  <button routerLink="">Retour</button>
+</div>
 
-<div class="form">
-  <form class="content" [formGroup]="filmForm" (ngSubmit)="save()">
+<div class="card row">
+  <form class="form col" [formGroup]="filmForm" (ngSubmit)="save()">
     <input type="number" formControlName="id" hidden>
-    <div class="field">
+    <div class="col">
       <label>Titre</label>
-      <input class="input" type="text" formControlName="title">
-      <label class="alert" *ngIf="filmForm.controls.title.status == 'INVALID'">Valeur obligatoire.</label>
+      <input type="text" formControlName="title">
+      <label class="text-alert" *ngIf="filmForm.controls.title.status == 'INVALID'">Valeur obligatoire.</label>
     </div>
-    <div class="field">
+    <div class="col">
       <label>Synopsis</label>
-      <textarea class="input" formControlName="synopsis"></textarea>
+      <textarea formControlName="synopsis"></textarea>
     </div>
-    <div class="field">
+    <div class="col">
       <label>Note</label>
-      <input class="input" type="number" formControlName="rating" min="0" max="5">
+      <input type="number" formControlName="rating" min="0" max="5">
     </div>
-    <button [disabled]="filmForm.status === 'INVALID'" type="submit">Sauvegarder</button>
+    <div class="row justify-center">
+      <button [disabled]="filmForm.status === 'INVALID'" type="submit">Sauvegarder</button>
+    </div>
   </form>
 </div>

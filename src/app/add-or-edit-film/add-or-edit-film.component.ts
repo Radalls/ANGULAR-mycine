@@ -26,28 +26,33 @@ export class AddOrEditFilmComponent implements OnInit {
 
   save() {
     if (this.film?.id) {
-      this.filmService.updateFilm(this.filmForm.value as Film)
+      this.filmService.updateFilm(this.filmForm.value as Film).subscribe(() => {
+        this.router.navigate(['/'])
+      })
     }
     else {
-      this.filmService.createFilm(this.filmForm.value as Film)
+      this.filmService.createFilm(this.filmForm.value as Film).subscribe(() => {
+        this.router.navigate(['/'])
+      })
     }
-
-    this.router.navigate(['/'])
   }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
     if (id) {
-      this.film = this.filmService.getFilm(Number.parseInt(id))
+      this.filmService.getFilm(Number.parseInt(id)).subscribe((film) => {
+        this.film = film
 
-      if (this.film) {
-        this.filmForm.setValue({
-          id: this.film.id,
-          title: this.film.title,
-          synopsis: this.film.synopsis,
-          rating: this.film.rating
-        })
-      }
+        if (this.film) {
+          this.filmForm.setValue({
+            id: this.film.id,
+            title: this.film.title,
+            synopsis: this.film.synopsis,
+            rating: this.film.rating
+          })
+        }
+      })
     }
   }
+
 }

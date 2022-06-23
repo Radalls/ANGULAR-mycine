@@ -8,6 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListFilmComponent } from './list-film/list-film.component';
 import { DetailsFilmComponent } from './details-film/details-film.component';
 import { CardFilmComponent } from './card-film/card-film.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RatingFilmComponent } from './rating-film/rating-film.component';
+
 
 @NgModule({
   declarations: [
@@ -15,9 +18,11 @@ import { CardFilmComponent } from './card-film/card-film.component';
     AddOrEditFilmComponent,
     ListFilmComponent,
     DetailsFilmComponent,
-    CardFilmComponent
+    CardFilmComponent,
+    RatingFilmComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule

@@ -1,7 +1,4 @@
-<div class="card">
-  <div class="fields">
-    <div class="title">{{ this.film?.title }}</div>
-    <div>Note : {{ this.film?.rating }}</div>
-  </div>
-  <button class="details" [routerLink]="['/films', this.film?.id]">Détails</button>
-</div>
+<button *ngIf="film" class="card clickable row justify-between items-center" [routerLink]="['/films', this.film?.id]">
+  <div>{{ film.title }}</div>
+  <app-rating-film [rating]="film.rating"></app-rating-film>
+</button>

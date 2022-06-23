@@ -1,5 +1,7 @@
-<button routerLink="add">Créer un film</button>
+<div class="actions">
+  <button routerLink="add">Créer un film</button>
+</div>
 
-<div class="list" *ngFor="let film of films">
+<div *ngFor="let film of films">
   <app-card-film [film]="film"></app-card-film>
 </div>

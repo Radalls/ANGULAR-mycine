@@ -16,13 +16,16 @@ export class DetailsFilmComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    if (id) this.film = this.filmService.getFilm(Number.parseInt(id))
+    if (id) this.filmService.getFilm(Number.parseInt(id)).subscribe((film) => {
+      this.film = film
+    })
   }
 
   delete() {
     if (this.film) {
-      this.filmService.deleteFilm(this.film)
-      this.router.navigate(['/'])
+      this.filmService.deleteFilm(this.film.id).subscribe(() => {
+        this.router.navigate(['/'])
+      })
     }
   }
 

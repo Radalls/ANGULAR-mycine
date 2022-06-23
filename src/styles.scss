@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: Nunito;
+}
+
+input {
+  width: 250px;
+}
+
+textarea {
+  height: 75px;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.clickable:hover {
+  background-color: lightgrey;
+}
+
+.text-title {
+  font-size: 20px;
+}
+
+.text-alert {
+  color: red;
+}
+
+.page {
+  width: 800px;
+}
+
+.form {
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: solid grey 1px;
+  background-color: whitesmoke;
+  transition: all linear 0.1s;
+}
+
+.actions {
+  display: flex;
+  margin-top: 20px;
+  gap: 5px;
+}
