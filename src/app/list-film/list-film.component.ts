@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Film } from '../models/Film';
-import { FilmService } from '../services/film.service';
+import { Store } from '@ngrx/store';
+import { Film } from '@shared/models/Film';
+import { selectFilms } from './../@shared/store/film.selectors';
 
 @Component({
   selector: 'app-list-film',
@@ -11,10 +12,10 @@ export class ListFilmComponent implements OnInit {
 
   films: Film[] = []
 
-  constructor(private filmService: FilmService) { }
+  constructor(private store: Store<{films: Film[]}>) { }
 
   ngOnInit(): void {
-    this.filmService.getAllFilms().subscribe((filmList) => {
+    this.store.select(selectFilms).subscribe((filmList) => {
       this.films = filmList
     })
   }

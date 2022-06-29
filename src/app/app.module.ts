@@ -10,6 +10,10 @@ import { DetailsFilmComponent } from './details-film/details-film.component';
 import { CardFilmComponent } from './card-film/card-film.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RatingFilmComponent } from './rating-film/rating-film.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { filmReducer } from '@shared/store/film.reducer';
+import { FilmEffects } from './@shared/store/film.effects';
 
 
 @NgModule({
@@ -25,7 +29,9 @@ import { RatingFilmComponent } from './rating-film/rating-film.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({films: filmReducer}),
+    EffectsModule.forRoot([FilmEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

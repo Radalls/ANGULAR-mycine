@@ -9,17 +9,19 @@ import { Observable } from 'rxjs';
 })
 export class FilmService {
 
-  static nextId: number = 4 // mock starter value
-  films: Film[] = []
+  //static nextId: number = 4 // mock starter value
+  //films: Film[] = []
 
   filmsUrl = 'http://localhost:3000/films'
 
   constructor(private _httpClient: HttpClient) { }
 
+  /*
   setId(film: Film) {
     film.id = FilmService.nextId
     FilmService.nextId++
   }
+  */
 
   getAllFilms(): Observable<Film[]> {
     //return this.films
