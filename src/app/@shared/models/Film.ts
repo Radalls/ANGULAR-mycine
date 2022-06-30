@@ -3,4 +3,5 @@ export interface Film {
   title: string
   synopsis: string
   rating: number
+  release: string
 }

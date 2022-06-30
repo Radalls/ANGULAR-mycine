@@ -7,6 +7,7 @@
 <div class="card" *ngIf="film">
   <div class="row justify-between items-center">
     <h2>{{ film.title }}</h2>
+    <div *ngIf="film.release">{{ formatDate(film.release) }}</div>
     <app-rating-film [rating]="film.rating"></app-rating-film>
   </div>
   <div>

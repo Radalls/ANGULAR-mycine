@@ -2,7 +2,7 @@
   <button routerLink="">Retour</button>
 </div>
 
-<div class="card row">
+<div class="card row justify-center">
   <form class="form col" [formGroup]="filmForm" (ngSubmit)="save()">
     <input type="number" formControlName="id" hidden>
     <div class="col">
@@ -17,6 +17,10 @@
     <div class="col">
       <label>Note</label>
       <input type="number" formControlName="rating" min="0" max="5">
+    </div>
+    <div class="col">
+      <label>Sortie</label>
+      <input type="date" formControlName="release">
     </div>
     <div class="row justify-center">
       <button [disabled]="filmForm.status === 'INVALID'" type="submit">Sauvegarder</button>

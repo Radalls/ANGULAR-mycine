@@ -2,6 +2,6 @@
   <button routerLink="add">Créer un film</button>
 </div>
 
-<div *ngFor="let film of films">
+<div *ngFor="let film of (films | async)">
   <app-card-film [film]="film"></app-card-film>
 </div>
