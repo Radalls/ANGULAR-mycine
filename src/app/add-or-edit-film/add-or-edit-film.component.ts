@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Film } from '@shared/models/Film';
 import { FilmService } from '@shared/services/film.service';
-import { addFilm } from './../@shared/store/film.actions';
+import { addFilm, editFilm } from './../@shared/store/film.actions';
 
 @Component({
   selector: 'app-add-or-edit-film',
@@ -34,9 +34,7 @@ export class AddOrEditFilmComponent implements OnInit {
 
   save() {
     if (this.film?.id) {
-      this.filmService.updateFilm(this.filmForm.value as Film).subscribe(() => {
-        this.router.navigate(['/'])
-      })
+      this.store.dispatch(editFilm({ film: this.filmForm.value as Film }))
     }
     else {
       this.store.dispatch(addFilm({ film: this.filmForm.value as Film }))
